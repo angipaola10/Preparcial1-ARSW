@@ -39,9 +39,9 @@ public class MoneyLaunderingServiceStub implements MoneyLaunderingService {
     }
 
     @Override
-    public void addSuspectAccounts(SuspectAccount account) throws MoneyLaunderingException{
+    public synchronized void addSuspectAccounts(SuspectAccount account) throws MoneyLaunderingException{
         for (SuspectAccount sa: suspectAccounts){
-            if (sa.getAccountId() == account.getAccountId()){
+            if (sa.getAccountId().equals(account.getAccountId())){
                 throw new MoneyLaunderingException("This account already exists");
             }
         }

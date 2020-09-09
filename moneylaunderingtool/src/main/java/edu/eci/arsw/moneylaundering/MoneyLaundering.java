@@ -100,7 +100,6 @@ public class MoneyLaundering implements Runnable
     public void run() {
         Thread processingThread = new Thread(() -> processTransactionData());
         processingThread.start();
-        System.out.println(amountOfFilesProcessed.get()+" "+amountOfFilesTotal);
         while(amountOfFilesTotal==-1 || amountOfFilesProcessed.get() < amountOfFilesTotal)
         {          
             Scanner scanner = new Scanner(System.in);
