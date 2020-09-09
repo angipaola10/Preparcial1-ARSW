@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface MoneyLaunderingService {
+    
     void updateAccountStatus(SuspectAccount suspectAccount)throws MoneyLaunderingException;
     SuspectAccount getAccountStatus(String accountId) throws MoneyLaunderingException;
     List<SuspectAccount> getSuspectAccounts();
     public void addSuspectAccounts(SuspectAccount cuenta) throws MoneyLaunderingException;
+
 }
