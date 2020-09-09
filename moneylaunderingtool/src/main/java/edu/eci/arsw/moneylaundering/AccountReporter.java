@@ -23,7 +23,7 @@ public class AccountReporter {
 
             try {
                 HttpClient httpClient = HttpClientBuilder.create().build();
-                HttpPost request = new HttpPost("http://localhost:8080/fraud-bank-accounts");
+                HttpPost request = new HttpPost("http://preparcial.herokuapp.com/fraud-bank-accounts");
                 request.setEntity(entity);
 
                 HttpResponse response;
